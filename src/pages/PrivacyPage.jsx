@@ -29,7 +29,7 @@ const PrivacyPage = () => {
                     <div className="max-w-3xl mx-auto prose prose-lg">
 
                         <p className="text-lg text-charcoal-light leading-relaxed mb-10">
-                            At FarmGuide, we value your privacy and are committed to being transparent
+                            At Agrovia, we value your privacy and are committed to being transparent
                             about how we handle your information. This policy explains what we collect,
                             how we use it, and how we protect it.
                         </p>
@@ -38,28 +38,28 @@ const PrivacyPage = () => {
                         <div className="mb-10">
                             <h2 className="text-2xl font-bold text-charcoal mb-4">Information We Collect</h2>
                             <p className="text-charcoal-light leading-relaxed mb-4">
-                                When you use FarmGuide, we may collect the following information:
+                                When you use Agrovia, we may collect the following information:
                             </p>
                             <ul className="space-y-2 text-charcoal-light">
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Name</strong> — to personalize your experience</span>
+                                    <span><strong>Name</strong>: to personalize your experience</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Location (city/region)</strong> — to provide weather-aware guidance</span>
+                                    <span><strong>Location (city/region)</strong>: to provide weather-aware guidance</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Crop information</strong> — to tailor recommendations to your needs</span>
+                                    <span><strong>Crop information</strong>: to tailor recommendations to your needs</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Language preference</strong> — to communicate in your preferred language</span>
+                                    <span><strong>Language preference</strong>: to communicate in your preferred language</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Messages and questions</strong> — to provide helpful responses</span>
+                                    <span><strong>Messages and questions</strong>: to provide helpful responses</span>
                                 </li>
                             </ul>
                         </div>
@@ -81,7 +81,7 @@ const PrivacyPage = () => {
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span>Enhance your overall experience with FarmGuide</span>
+                                    <span>Enhance your overall experience with Agrovia</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
@@ -97,7 +97,7 @@ const PrivacyPage = () => {
                                 Your trust matters to us. We want to be clear: <strong>we do not sell
                                     your data</strong>. We do not share your personal information with third
                                 parties for their marketing purposes. Your data is used solely to provide
-                                and improve FarmGuide.
+                                and improve Agrovia.
                             </p>
                         </div>
 
@@ -105,7 +105,7 @@ const PrivacyPage = () => {
                         <div className="mb-10">
                             <h2 className="text-2xl font-bold text-charcoal mb-4">Cookies & Analytics</h2>
                             <p className="text-charcoal-light leading-relaxed">
-                                We may use basic analytics tools to understand how people use FarmGuide.
+                                We may use basic analytics tools to understand how people use Agrovia.
                                 This helps us identify what works well and what can be improved. These
                                 tools collect anonymous usage data and do not personally identify you.
                             </p>
@@ -128,10 +128,10 @@ const PrivacyPage = () => {
                                 If you have any questions about this privacy policy or how we handle
                                 your data, please reach out to us at{' '}
                                 <a
-                                    href="mailto:info@abdullahahmed.live"
-                                    className="text-primary hover:underline"
+                                    href="mailto:info@agrovia.tech"
+                                    className="text-primary hover:underline font-medium"
                                 >
-                                    info@abdullahahmed.live
+                                    info@agrovia.tech
                                 </a>
                             </p>
                         </div>

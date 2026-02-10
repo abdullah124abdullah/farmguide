@@ -1,108 +1,79 @@
+import { useLanguage } from '../../context/LanguageContext';
 import { Container } from '../ui';
 
-/**
- * Product Value Section
- * Explains how FarmGuide supports better farming decisions
- */
+const content = {
+    en: {
+        title: 'Guidance You Can Trust',
+        desc: "Agrovia doesn't promise perfect harvests. No one can. What we offer is reliable, intelligent support that helps you make better-informed decisions for your land and your livelihood.",
+        card: {
+            label: 'Example: Smart Recommendation',
+            title: '🌾 Wheat Crop Advisory',
+            text: 'Based on your location in Punjab and current weather patterns, consider delaying irrigation by 2 days. Rain is expected on Thursday which will provide natural moisture for your wheat crop.',
+            meta1: 'Punjab Region',
+            meta2: 'Weather-Aware',
+            meta3: 'Personalized',
+        },
+        points: [
+            { title: 'Data-Informed', desc: 'Recommendations backed by Pakistani agricultural data' },
+            { title: 'Always Improving', desc: 'Our AI learns and gets better with every interaction' },
+            { title: 'Honest & Transparent', desc: 'We tell you what we know and what we do not' },
+        ],
+    },
+    ur: {
+        title: 'قابل اعتماد رہنمائی',
+        desc: 'اگروویا بہترین فصل کا وعدہ نہیں کرتا۔ کوئی نہیں کر سکتا۔ ہم جو پیش کرتے ہیں وہ قابل اعتماد، ذہین مدد ہے جو آپ کو اپنی زمین اور معاش کے لیے بہتر فیصلے کرنے میں مدد دیتی ہے۔',
+        card: {
+            label: 'مثال: سمارٹ سفارش',
+            title: '🌾 گندم کی فصل کا مشورہ',
+            text: 'پنجاب میں آپ کے مقام اور موجودہ موسمی حالات کی بنیاد پر، آبپاشی 2 دن تاخیر سے کریں۔ جمعرات کو بارش متوقع ہے جو آپ کی گندم کی فصل کو قدرتی نمی فراہم کرے گی۔',
+            meta1: 'پنجاب کا علاقہ',
+            meta2: 'موسم سے آگاہ',
+            meta3: 'ذاتی مشورہ',
+        },
+        points: [
+            { title: 'ڈیٹا پر مبنی', desc: 'پاکستان کے زرعی ڈیٹا پر مبنی سفارشات' },
+            { title: 'ہمیشہ بہتر ہوتا', desc: 'ہمارا AI ہر بات چیت سے سیکھتا اور بہتر ہوتا ہے' },
+            { title: 'ایمانداری اور شفافیت', desc: 'ہم بتاتے ہیں کیا جانتے ہیں اور کیا نہیں جانتے' },
+        ],
+    }
+};
+
 const ProductValue = () => {
-    const values = [
-        {
-            title: 'Personalized Insights',
-            description: 'Recommendations tailored to your specific crops, soil, and local conditions.',
-        },
-        {
-            title: 'Data-Informed Decisions',
-            description: 'Combine weather forecasts, soil data, and best practices for smarter choices.',
-        },
-        {
-            title: 'Continuous Learning',
-            description: 'Our AI improves with each interaction, getting better at helping you succeed.',
-        },
-    ];
+    const { language } = useLanguage();
+    const c = content[language];
 
     return (
-        <section className="py-20 md:py-28 bg-off-white">
+        <section className="py-16 md:py-24 bg-off-white">
             <Container>
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    {/* Content - Left */}
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <span
-                            className="font-medium text-sm uppercase tracking-wider text-primary"
-                        >
-                            Why FarmGuide
-                        </span>
-                        <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6 text-charcoal">
-                            Guidance You Can Trust
-                        </h2>
-                        <p className="text-lg text-charcoal-light leading-relaxed mb-8">
-                            FarmGuide doesn't promise perfect harvests — no one can.
-                            What we offer is reliable, intelligent support that helps you make
-                            better-informed decisions for your land and your livelihood.
-                        </p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">{c.title}</h2>
+                        <p className="text-lg text-charcoal-light leading-relaxed mb-8">{c.desc}</p>
 
-                        <div className="space-y-5">
-                            {values.map((value, index) => (
-                                <div key={index} className="flex gap-4 group">
-                                    <div
-                                        className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white font-semibold bg-primary transition-transform group-hover:scale-105"
-                                    >
-                                        {index + 1}
-                                    </div>
+                        <div className="space-y-4">
+                            {c.points.map((point, index) => (
+                                <div key={index} className="flex items-start gap-3">
+                                    <svg className="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                    </svg>
                                     <div>
-                                        <h3 className="font-semibold mb-1 text-charcoal">
-                                            {value.title}
-                                        </h3>
-                                        <p className="text-sm text-charcoal-light">
-                                            {value.description}
-                                        </p>
+                                        <h4 className="font-semibold text-charcoal">{point.title}</h4>
+                                        <p className="text-sm text-charcoal-light">{point.desc}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Visual Card - Right */}
-                    <div className="relative">
-                        <div
-                            className="rounded-2xl p-8 md:p-10 text-white relative overflow-hidden bg-gradient-to-br from-primary to-primary-light shadow-2xl shadow-primary/20"
-                        >
-                            {/* Decorative blur */}
-                            <div
-                                className="absolute top-4 right-4 w-20 h-20 rounded-full blur-xl bg-accent/20"
-                            />
-
-                            <div className="relative">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/20 backdrop-blur-sm"
-                                    >
-                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-lg font-semibold">Smart Recommendations</span>
-                                </div>
-
-                                <p className="leading-relaxed mb-6 text-white/90">
-                                    "Based on current weather patterns and your wheat crop's growth stage,
-                                    consider reducing irrigation for the next 3 days."
-                                </p>
-
-                                <div className="flex items-center gap-4 text-sm text-white/70">
-                                    <span className="flex items-center gap-1">
-                                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                                        </svg>
-                                        Your Region
-                                    </span>
-                                    <span className="flex items-center gap-1">
-                                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                                        </svg>
-                                        Real-time
-                                    </span>
-                                </div>
-                            </div>
+                    {/* Recommendation Card */}
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                        <div className="text-xs font-medium uppercase tracking-wider text-primary mb-4">{c.card.label}</div>
+                        <h3 className="text-lg font-bold text-charcoal mb-3">{c.card.title}</h3>
+                        <p className="text-charcoal-light leading-relaxed mb-4">{c.card.text}</p>
+                        <div className="flex flex-wrap gap-2">
+                            {[c.card.meta1, c.card.meta2, c.card.meta3].map((tag, i) => (
+                                <span key={i} className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">{tag}</span>
+                            ))}
                         </div>
                     </div>
                 </div>

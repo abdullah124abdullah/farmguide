@@ -89,7 +89,7 @@ const Accessibility = () => {
                             Speak Your Language
                         </h2>
                         <p className="text-lg text-charcoal-light leading-relaxed mb-8">
-                            Not everyone reads or types easily. That's why FarmGuide is designed
+                            Not everyone reads or types easily. That's why Agrovia is designed
                             for voice-first interaction. Simply speak in your language, and get
                             guidance you can understand.
                         </p>

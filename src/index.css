@@ -54,12 +54,44 @@
 }
 
 /* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-charcoal);
   background-color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Brand Selection Color - visible on both light and dark backgrounds */
+::selection {
+  background-color: #C8E6C9;
+  color: #1B5E20;
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid #1B5E20;
+  outline-offset: 2px;
+}
+
+/* RTL Support for Urdu */
+[dir="rtl"] {
+  font-family: 'Noto Nastaliq Urdu', 'Segoe UI', system-ui, sans-serif;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .gap-2>svg+span,
+[dir="rtl"] .ml-1,
+[dir="rtl"] .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
 }
 
 /* Animation Utilities */

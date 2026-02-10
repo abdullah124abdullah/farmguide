@@ -31,7 +31,7 @@ const Hero = () => {
 
                     {/* Subheading */}
                     <p className="text-lg md:text-xl text-charcoal-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                        FarmGuide helps you make informed decisions about your crops.
+                        Agrovia helps you make informed decisions about your crops.
                         Get personalized recommendations based on your location, weather, and growing conditions.
                     </p>
 

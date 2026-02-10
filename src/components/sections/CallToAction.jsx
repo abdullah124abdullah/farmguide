@@ -22,7 +22,7 @@ const CallToAction = () => {
                         Ready to Grow Smarter?
                     </h2>
                     <p className="text-lg leading-relaxed mb-10 text-white/90">
-                        Join farmers who are already using FarmGuide to make better decisions.
+                        Join farmers who are already using Agrovia to make better decisions.
                         No commitment, no credit card. Just helpful guidance when you need it.
                     </p>
 
@@ -45,10 +45,10 @@ const CallToAction = () => {
                     <p className="mt-8 text-sm text-white/70">
                         Have questions? Email us at{' '}
                         <a
-                            href="mailto:hello@farm.abdullahahmed.live"
-                            className="underline hover:text-white transition-colors"
+                            href="mailto:info@agrovia.tech"
+                            className="text-white/80 hover:text-white transition-colors underline"
                         >
-                            hello@farm.abdullahahmed.live
+                            info@agrovia.tech
                         </a>
                     </p>
                 </div>

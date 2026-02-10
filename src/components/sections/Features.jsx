@@ -40,7 +40,7 @@ const Features = () => {
                 </svg>
             ),
             title: 'Voice & Chat Interaction',
-            description: 'Talk to FarmGuide using your voice or simple text messages.',
+            description: 'Talk to Agrovia using your voice or simple text messages.',
         },
         {
             icon: (
@@ -73,7 +73,7 @@ const Features = () => {
                         Features
                     </span>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-charcoal">
-                        What FarmGuide Offers
+                        What Agrovia Offers
                     </h2>
                     <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
                         Tools and guidance designed with farmers in mind.

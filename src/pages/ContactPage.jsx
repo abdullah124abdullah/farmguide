@@ -44,7 +44,7 @@ const ContactPage = () => {
 
             // The webhook returns { status: "success", message: "..." }
             if (response.ok || result.status === 'success') {
-                setSuccessMessage(result.message || "We've received your request and will be in touch soon.");
+                setSuccessMessage(result.message || "Thanks for reaching out. Our team will contact you soon.");
                 setIsSubmitted(true);
                 // Reset form data but keep source
                 setFormData(prev => ({
@@ -62,7 +62,7 @@ const ContactPage = () => {
             }
         } catch (error) {
             console.error('Form submission error:', error);
-            setErrorMessage('We encountered a problem sending your request. Please try again or contact us directly at info@abdullahahmed.live.');
+            setErrorMessage('We encountered a problem sending your request. Please try again or contact us directly at support@agrovia.tech.');
         } finally {
             setIsSubmitting(false);
         }
@@ -296,10 +296,10 @@ const ContactPage = () => {
                                 Have questions? Reach out directly:
                             </p>
                             <a
-                                href="mailto:contact@abdullahahmed.live"
+                                href="mailto:info@agrovia.tech"
                                 className="text-primary font-medium hover:underline"
                             >
-                                contact@abdullahahmed.live
+                                info@agrovia.tech
                             </a>
                         </div>
                     </div>

@@ -1,72 +1,49 @@
+import { useLanguage } from '../../context/LanguageContext';
 import { Container } from '../ui';
 
-/**
- * Trust Context Section
- * Explains farming challenges in a calm, data-driven way
- */
+const content = {
+    en: {
+        badge: 'The Challenge',
+        title: 'Farming in Pakistan is Getting Harder',
+        sub: 'Pakistani farmers face growing challenges that technology can help solve.',
+        items: [
+            { icon: '🌦️', title: 'Unpredictable Weather', desc: 'Changing weather patterns make it harder to plan planting and harvesting seasons.' },
+            { icon: '🦠', title: 'Crop Diseases', desc: 'Identifying diseases early is difficult without expert knowledge readily available.' },
+            { icon: '⏱️', title: 'Timing Decisions', desc: 'Knowing exactly when to water, fertilize, or harvest can make or break a season.' },
+            { icon: '📉', title: 'Market Uncertainty', desc: 'Farmers often lack real-time market rate information to make profitable selling decisions.' },
+        ],
+    },
+    ur: {
+        badge: 'چیلنج',
+        title: 'پاکستان میں کاشتکاری مشکل ہوتی جا رہی ہے',
+        sub: 'پاکستانی کسانوں کو بڑھتے ہوئے چیلنجز کا سامنا ہے جن میں ٹیکنالوجی مدد کر سکتی ہے۔',
+        items: [
+            { icon: '🌦️', title: 'غیر متوقع موسم', desc: 'بدلتے موسمی پیٹرن بوائی اور فصل کٹائی کی منصوبہ بندی کو مشکل بناتے ہیں۔' },
+            { icon: '🦠', title: 'فصل کی بیماریاں', desc: 'ماہر علم کے بغیر بیماریوں کی جلد شناخت مشکل ہے۔' },
+            { icon: '⏱️', title: 'وقت کے فیصلے', desc: 'پانی، کھاد یا فصل کٹائی کا صحیح وقت جاننا موسم کامیاب بنا سکتا ہے۔' },
+            { icon: '📉', title: 'مارکیٹ کی غیر یقینی', desc: 'کسانوں کو اکثر منافع بخش فروخت کے لیے ریئل ٹائم منڈی ریٹ کی معلومات نہیں ملتیں۔' },
+        ],
+    }
+};
+
 const TrustContext = () => {
-    const challenges = [
-        {
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                </svg>
-            ),
-            title: 'Unpredictable Weather',
-            description: 'Climate patterns are shifting, making traditional farming calendars less reliable.',
-        },
-        {
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-            ),
-            title: 'Crop Diseases',
-            description: 'Identifying and responding to plant diseases early can save an entire harvest.',
-        },
-        {
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            ),
-            title: 'Timing Decisions',
-            description: 'Knowing when to plant, water, or harvest requires accurate, timely information.',
-        },
-    ];
+    const { language } = useLanguage();
+    const c = content[language];
 
     return (
-        <section id="about" className="py-20 md:py-28 bg-white">
+        <section className="py-16 md:py-24 bg-white">
             <Container>
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-charcoal">
-                        Farming Today is Complex
-                    </h2>
-                    <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
-                        Modern farmers face challenges that require more than experience alone.
-                        Access to the right information at the right time can make all the difference.
-                    </p>
+                <div className="text-center mb-12">
+                    <span className="inline-block font-medium text-sm uppercase tracking-wider mb-3 text-primary">{c.badge}</span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">{c.title}</h2>
+                    <p className="text-lg text-charcoal-light max-w-2xl mx-auto">{c.sub}</p>
                 </div>
-
-                {/* Challenge Cards Grid */}
-                <div className="grid md:grid-cols-3 gap-8">
-                    {challenges.map((challenge, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-xl p-8 text-center border border-gray-200 transition-all hover:shadow-lg hover:-translate-y-1 group"
-                        >
-                            <div
-                                className="inline-flex items-center justify-center w-16 h-16 rounded-xl mb-5 bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors"
-                            >
-                                {challenge.icon}
-                            </div>
-                            <h3 className="text-xl font-semibold mb-3 text-charcoal">
-                                {challenge.title}
-                            </h3>
-                            <p className="text-charcoal-light leading-relaxed">
-                                {challenge.description}
-                            </p>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {c.items.map((item, index) => (
+                        <div key={index} className="text-center p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+                            <span className="text-3xl mb-3 block">{item.icon}</span>
+                            <h3 className="font-semibold text-charcoal mb-2">{item.title}</h3>
+                            <p className="text-sm text-charcoal-light">{item.desc}</p>
                         </div>
                     ))}
                 </div>
